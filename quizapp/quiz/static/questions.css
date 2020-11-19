@@ -1,0 +1,58 @@
+body{
+	margin-top: 0;
+	background: rgb(176, 221, 252);
+    background: rgba(176, 221, 252, 0.4);
+}
+form{
+	margin-top: 30px;
+	margin-left: 200px;
+}
+h1 {
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+.row1{
+	margin-top: 30px;
+}
+.row2 {
+	padding: 1em 1em 0;
+}
+
+label {
+	margin-right: 1.7em;
+	font-size: 18px;
+
+}
+
+.row2 input[type="radio"] {
+	display: none;
+}
+.row2 label {
+	position: relative;
+	display: inline-block;
+	padding: 3px 3px 3px 25px;
+	cursor: pointer;
+}
+.row2 label::before {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	margin-top: -8px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 100%;
+}
+.row2 input[type="radio"]:checked + label::after {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 2.85px;
+	width: 10px;
+	height: 10px;
+	margin-top: -4px;
+	background: #3498db;
+	border-radius: 100%;
+}

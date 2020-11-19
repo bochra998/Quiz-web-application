@@ -1,0 +1,35 @@
+body,html{
+	background-image: url("quizim/bgquiz.jpg");
+}
+.container{
+
+}
+.row{
+	margin-top: 180px;
+	margin-left: 10px;
+}
+.card{
+	height: 300px;
+	width: 400px;
+}
+.col-sm-4{
+	margin-left:20px;
+}
+.card-img-top{
+	margin-left: 40px;
+	margin-top: 40px;
+}
+.card-body{
+	margin-top: 60px;
+}
+.card-body h2{
+	margin-left: 90px;
+}
+.card-body p{
+	font-size: 18px;
+}
+.card-body button{
+	margin-top: 10px;
+	margin-left: 110px;
+	font-size: 17px;
+}

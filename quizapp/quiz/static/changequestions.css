@@ -1,0 +1,21 @@
+html body{
+	background: rgb(176, 221, 252);
+    background: rgba(176, 221, 252, 0.4);
+}
+form{
+	margin-left:220px;
+	margin-top: 20px;
+}
+h2{
+	margin-left: 100px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #08609B;
+}
+.row{
+	margin-top: 20px;
+}
+.form-group{
+	margin-top: 20px;
+}

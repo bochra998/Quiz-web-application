@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change questions</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'changequestions.css' %}">
+</head>
+<body>
+	<div class="container">
+	<h2>Add the question </h2>
+<form action="{% url 'quiz:adminpage' %}" method="post">
+{% csrf_token %}
+    {% load widget_tweaks %}
+  <div class="form-group row">
+    <label for="question" class="col-sm-2 col-form-label">Question:</label>
+    <div class="col-sm-8">
+      {% render_field form.question type="text" class="form-control" id="question" placeholder="Question"%}
+    </div>
+  </div>
+  <div style="width:250px;margin-left: 270px">
+  <hr style="height:2px;border-width:0px;color:gray;background-color:#08609B">
+  </div>
+    <div class="form-group row">
+    <label for="optiona" class="col-sm-2 col-form-label">Option A:</label>
+    <div class="col-sm-8">
+       {% render_field form.optiona type="text" class="form-control" id="optiona" placeholder="Option A"%}
+    </div>
+  </div>
+  <div style="width:250px;margin-left: 270px">
+  <hr style="height:2px;border-width:0px;color:gray;background-color:#08609B">
+  </div>
+  <div class="form-group row">
+    <label for="optionb" class="col-sm-2 col-form-label">Option B:</label>
+    <div class="col-sm-8">
+      {% render_field form.optionb type="text" class="form-control" id="optionb" placeholder="Option B"%}
+    </div>
+  </div>
+  <div style="width:250px;margin-left: 270px">
+  <hr style="height:2px;border-width:0px;color:gray;background-color:#08609B">
+  </div>
+  <div class="form-group row">
+    <label for="optionc" class="col-sm-2 col-form-label">Option C:</label>
+    <div class="col-sm-8">
+      {% render_field form.optionc type="text" class="form-control" id="optionc" placeholder="Option C"%}
+    </div>
+  </div>
+  <div style="width:250px;margin-left: 270px">
+  <hr style="height:2px;border-width:0px;color:gray;background-color:#08609B">
+  </div>
+  <div class="form-group row">
+    <label for="optiond" class="col-sm-2 col-form-label">Option D:</label>
+    <div class="col-sm-8">
+      {% render_field form.optiond type="text" class="form-control" id="optiond" placeholder="Option D"%}
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="answer" class="col-sm-2 col-form-label">Answer:</label>
+    <div class="col-sm-8">
+      {% render_field form.answer type="text" class="form-control" id="answer" placeholder="Answer"%}
+    </div>
+  </div>
+  <div style="width:250px;margin-left: 270px">
+  <hr style="height:2px;border-width:0px;color:#03B5AA;background-color:#08609B">
+  </div>
+  <div class="form-group row">
+     <label class="my-1 mr-2 col-sm-2 col-form-label" for="category" >Category: </label>
+     {% render_field form.catagory  class="form-control" id="category" placeholder="Category"%}
+  </div>
+   	<div class="row">
+   		<div class="offset-sm-5">
+   			<button type="submit" class="btn btn-primary btn-lg">Add question</button>
+   		</div>
+
+   	</div>
+ </form>
+</div>
+</body>
+</html>

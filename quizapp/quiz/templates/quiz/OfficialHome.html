@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}">
+</head>
+<body style="background: url('{% static 'quizim/bgquiz.jpg' %}')" >
+	<div class="container">
+	<div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Take a quiz</h2>
+              <p class="card-text">Want to test yourself in various categories, Take the quiz and see!</p>
+              <button onclick="location.href='{% url 'quiz:login_user' %}'" class="btn btn-primary">Become a user</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+			 <img class="card-img-top" src="{% static 'quizim/iconquiz.png'%}" alt="Card image cap">
+		</div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Create a quiz</h2>
+              <p class="card-text">Start creating your quiz with us in different categories.</p>
+              <button onclick="location.href='{% url 'quiz:login_Admin' %}'" class="btn btn-primary">Become an admin</button>
+            </div>
+          </div>
+        </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	 {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'questions.css' %}">
+    <script>
+        setTimeout(function () {
+
+            $('.alert').alert();
+            document.f1.submit();
+        },5000);
+    </script>
+</head>
+<body>
+{% if user.is_authenticated %}
+<form action="{% url 'quiz:result' %}" method="post" name="f1">
+  {% for que in ques %}
+<div class="row row1">
+    <div class="col-md-12">
+      <h3>{{ forloop.counter }}. {{ que.question }}</h3>
+    </div>
+  </div>
+  <div class="row">
+  	 <div class="col-md-12">
+      <input type="radio" name="{{ que.id }}" value="{{ que.optiona }}" id="radio01-01">
+      <label for="radio01-01">{{ que.optiona }}</label>
+      <input type="radio" name="{{ que.id }}" value="{{ que.optionb }}" id="radio01-02">
+      <label for="radio01-02">{{ que.optionb }}</label>
+      <input type="radio" name="{{ que.id }}" value="{{ que.optionc }}" id="radio01-03" >
+       <label for="radio01-03">{{ que.optionc }}</label>
+      <input class="form_control" type="radio" name="{{ que.id }}" value="{{ que.optiond }}" id="radio01-04">
+       <label for="radio01-04">{{ que.optiond }}</label>
+   </div>
+  </div>
+  {% endfor %}
+  {% csrf_token %}
+  <br>
+ <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-block btn-success btn-md">Result</button>
+    </div>
+  </div>
+</form>
+    <div class="alert alert-danger">
+  <h4 class="alert-heading">Opps!</h4>
+  <p>It looks like you passed the quiz  time.</p>
+  <hr>
+  <p class="mb-0">Better luck next time.</p>
+</div>
+{% endif %}
+</body>
+</html>
